@@ -16,7 +16,7 @@
 .rightTint {
   position: absolute;
   inset: 0 0 0 auto;
-  width: 66%;
+  width: 68%;
   background:
     linear-gradient(140deg, rgba(15, 23, 42, 0.12), rgba(15, 23, 42, 0.24)),
     linear-gradient(30deg, rgba(223, 200, 167, 0.46) 0%, rgba(185, 146, 94, 0.32) 42%, rgba(123, 90, 54, 0.32) 43%, rgba(214, 199, 174, 0.28) 57%, rgba(142, 106, 61, 0.3) 58%, rgba(229, 211, 185, 0.34) 100%);
@@ -31,8 +31,8 @@
 .leftSlab {
   position: absolute;
   top: 0;
-  left: -8%;
-  width: 66%;
+  left: -9.5%;
+  width: 63.5%;
   height: 100%;
   border-bottom-right-radius: 3.6rem;
   background: rgba(255, 255, 255, 0.95);
@@ -141,6 +141,11 @@
   position: absolute;
 }
 
+.machineCabGlass,
+.machineBodyInset {
+  display: none;
+}
+
 .machineBase {
   right: 0;
   bottom: 0;
@@ -241,8 +246,8 @@
 
 @media (max-width: 980px) {
   .leftSlab {
-    left: -16%;
-    width: 92%;
+    left: -17%;
+    width: 89%;
     border-bottom-right-radius: 2rem;
   }
 
