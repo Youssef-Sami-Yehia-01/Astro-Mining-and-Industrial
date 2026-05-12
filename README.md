@@ -37,7 +37,7 @@ Next.js rebuild of the Astro Mining & Industrial homepage using the supplied pre
 - Industries grid matching the preview layout
 - Why Astro stats section matching the preview layout
 - Partners marquee
-- Global reach map section with interactive export pins
+- Global reach map section with coordinate-based export pins and flag previews
 - Footer with contact info, social links, and profile download
 
 ## Notes

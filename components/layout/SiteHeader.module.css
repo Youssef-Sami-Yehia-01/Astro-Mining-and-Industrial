@@ -76,6 +76,10 @@
   display: none;
 }
 
+.mobileBackdrop {
+  display: none;
+}
+
 .desktopCta :global(.button) {
   padding: 1.05rem 1.7rem;
   border-radius: 0.35rem;
@@ -98,31 +102,65 @@
   }
 
   .inner {
+    position: relative;
+    z-index: 2;
     padding-top: 1rem;
   }
 
+  .mobileBackdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    display: block;
+    border: 0;
+    background: rgba(15, 23, 42, 0);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity var(--transition),
+      background var(--transition);
+  }
+
+  .mobileBackdropOpen {
+    background: rgba(15, 23, 42, 0.34);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   .mobilePanel {
-    display: grid;
-    grid-template-rows: 0fr;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: block;
+    height: 100dvh;
     overflow: hidden;
-    transition: grid-template-rows var(--transition);
-    margin-top: 0.5rem;
-    background: rgba(255, 255, 255, 0.96);
-    border-top: 1px solid rgba(17, 24, 39, 0.08);
+    background: rgba(255, 255, 255, 0.985);
+    box-shadow: 0 22px 40px rgba(15, 23, 42, 0.14);
     backdrop-filter: blur(14px);
+    transition:
+      clip-path var(--transition),
+      opacity var(--transition);
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
   }
 
   .mobilePanelOpen {
-    grid-template-rows: 1fr;
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
   }
 
   .mobileNav {
-    overflow: hidden;
+    overflow: auto;
     display: grid;
+    align-content: start;
     gap: 1rem;
     width: min(var(--container), calc(100vw - 2rem));
+    min-height: 100dvh;
     margin: 0 auto;
-    padding: 1.25rem 0 1.5rem;
+    padding: 8rem 0 1.5rem;
   }
 
   .mobileNav a {

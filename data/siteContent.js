@@ -242,15 +242,78 @@ export const globalReach = [
 ];
 
 export const mapPins = [
-  { country: "Gulf countries", project: "GCC Silica Supply", x: 57, y: 52, tone: "linear-gradient(135deg,#fed7aa,#ea580c)" },
-  { country: "South Africa", project: "Ceramics Grade Minerals", x: 53, y: 79, tone: "linear-gradient(135deg,#e2e8f0,#64748b)" },
-  { country: "India", project: "Feldspar Export Hub", x: 67, y: 56, tone: "linear-gradient(135deg,#fde68a,#f97316)" },
-  { country: "Bangladesh", project: "Kaolin Processing Route", x: 71, y: 58, tone: "linear-gradient(135deg,#e7e5e4,#78716c)" },
-  { country: "Libya", project: "Industrial Sand Route", x: 49, y: 48, tone: "linear-gradient(135deg,#ffedd5,#f97316)" },
-  { country: "Turkey", project: "Dolomite Distribution", x: 53, y: 40, tone: "linear-gradient(135deg,#e5e7eb,#64748b)" },
-  { country: "Morocco", project: "North Africa Minerals", x: 43, y: 46, tone: "linear-gradient(135deg,#fef3c7,#fb923c)" },
-  { country: "Tunisia", project: "Carbonate Export Line", x: 47, y: 43, tone: "linear-gradient(135deg,#f4f4f5,#71717a)" },
-  { country: "Algeria", project: "Bulk Minerals Channel", x: 45, y: 47, tone: "linear-gradient(135deg,#fed7aa,#dc2626)" }
+  {
+    country: "Gulf countries",
+    project: "GCC Silica Supply",
+    latitude: 24.7,
+    longitude: 47.8,
+    flag: "/assets/images/flags/gulf-region.svg",
+    flagAlt: "Gulf region flags"
+  },
+  {
+    country: "South Africa",
+    project: "Ceramics Grade Minerals",
+    latitude: -29.0,
+    longitude: 24.0,
+    flag: "/assets/images/flags/south-africa.svg",
+    flagAlt: "South Africa flag"
+  },
+  {
+    country: "India",
+    project: "Feldspar Export Hub",
+    latitude: 21.1,
+    longitude: 78.0,
+    flag: "/assets/images/flags/india.svg",
+    flagAlt: "India flag"
+  },
+  {
+    country: "Bangladesh",
+    project: "Kaolin Processing Route",
+    latitude: 23.7,
+    longitude: 90.4,
+    flag: "/assets/images/flags/bangladesh.svg",
+    flagAlt: "Bangladesh flag"
+  },
+  {
+    country: "Libya",
+    project: "Industrial Sand Route",
+    latitude: 26.3,
+    longitude: 17.2,
+    flag: "/assets/images/flags/libya.svg",
+    flagAlt: "Libya flag"
+  },
+  {
+    country: "Turkey",
+    project: "Dolomite Distribution",
+    latitude: 39.0,
+    longitude: 35.0,
+    flag: "/assets/images/flags/turkey.svg",
+    flagAlt: "Turkey flag"
+  },
+  {
+    country: "Morocco",
+    project: "North Africa Minerals",
+    latitude: 31.8,
+    longitude: -7.1,
+    flag: "/assets/images/flags/morocco.svg",
+    flagAlt: "Morocco flag"
+  },
+  {
+    country: "Tunisia",
+    project: "Carbonate Export Line",
+    latitude: 34.0,
+    longitude: 9.0,
+    flag: "/assets/images/flags/tunisia.svg",
+    flagAlt: "Tunisia flag"
+  },
+  {
+    country: "Algeria",
+    project: "Bulk Minerals Channel",
+    latitude: 28.0,
+    longitude: 2.6,
+    flag: "/assets/images/flags/algeria.svg",
+    flagAlt: "Algeria flag"
+  }
 ];
 
 export const contactDetails = {

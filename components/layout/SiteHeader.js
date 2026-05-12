@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 import Logo from "@/components/shared/Logo";
 import Icon from "@/components/shared/Icon";
@@ -9,6 +9,14 @@ import styles from "@/components/layout/SiteHeader.module.css";
 
 export default function SiteHeader({ navigation }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   return (
     <header className={styles.header}>
@@ -42,6 +50,15 @@ export default function SiteHeader({ navigation }) {
           </button>
         </div>
       </div>
+      <button
+        aria-hidden={!isOpen}
+        className={clsx(styles.mobileBackdrop, {
+          [styles.mobileBackdropOpen]: isOpen
+        })}
+        onClick={() => setIsOpen(false)}
+        tabIndex={isOpen ? 0 : -1}
+        type="button"
+      />
       <div className={clsx(styles.mobilePanel, { [styles.mobilePanelOpen]: isOpen })}>
         <nav className={styles.mobileNav} aria-label="Mobile navigation">
           {navigation.map((item) => (

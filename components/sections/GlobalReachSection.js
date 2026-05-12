@@ -1,9 +1,24 @@
 "use client";
 
 import clsx from "clsx";
+import Image from "next/image";
 import { useState } from "react";
 import Icon from "@/components/shared/Icon";
 import styles from "@/components/sections/GlobalReachSection.module.css";
+
+function getProjectedPosition(latitude, longitude) {
+  const left = ((longitude + 180) / 360) * 100;
+  const top = ((90 - latitude) / 180) * 100;
+
+  return {
+    left: `${left}%`,
+    top: `${top}%`
+  };
+}
+
+function getPinByCountry(country, pins) {
+  return pins.find((pin) => pin.country === country) ?? pins[0];
+}
 
 export default function GlobalReachSection({ countries, pins }) {
   const [activePin, setActivePin] = useState(pins[0]);
@@ -15,51 +30,83 @@ export default function GlobalReachSection({ countries, pins }) {
           <span className="eyebrow">Our Global Reach</span>
           <h2 className="section-title">Exporting to many countries worldwide</h2>
           <div className={styles.countryGrid}>
-            {countries.map((country) => (
-              <button
-                key={country}
-                className={clsx(styles.countryButton, {
-                  [styles.countryButtonActive]: activePin.country === country
-                })}
-                onMouseEnter={() => setActivePin(pins.find((pin) => pin.country === country) ?? pins[0])}
-                type="button"
-              >
-                • {country}
-              </button>
-            ))}
+            {countries.map((country) => {
+              const pin = getPinByCountry(country, pins);
+
+              return (
+                <button
+                  key={country}
+                  className={clsx(styles.countryButton, {
+                    [styles.countryButtonActive]: activePin.country === country
+                  })}
+                  onFocus={() => setActivePin(pin)}
+                  onMouseEnter={() => setActivePin(pin)}
+                  type="button"
+                >
+                  <span className={styles.countryFlag}>
+                    <Image
+                      alt={pin.flagAlt}
+                      className={styles.countryFlagImage}
+                      height={16}
+                      src={pin.flag}
+                      width={24}
+                    />
+                  </span>
+                  <span>{country}</span>
+                </button>
+              );
+            })}
           </div>
         </div>
         <div className={styles.mapCard}>
           <div className={styles.mapTexture} />
-          <svg
-            viewBox="0 0 900 420"
+          <Image
+            alt=""
             className={styles.mapShape}
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path d="M61 175c45-61 120-88 199-70 64 14 76 68 136 62 67-7 85-82 172-74 79 7 132 75 194 63 36-7 59-38 87-22 24 14 25 53 4 76-38 42-104 17-151 60-42 39-24 93-79 111-43 14-81-13-126-32-88-37-175 8-246-30-65-34-58-103-112-107-32-2-52 20-78-1-14-12-15-25 0-36Z" />
-            <path d="M364 221c37-25 88-21 127 2 28 17 37 44 29 72-12 42-59 51-102 38-49-15-86-74-54-112Z" />
-          </svg>
+            fill
+            priority={false}
+            sizes="(max-width: 900px) 100vw, 66vw"
+            src="/assets/images/world-map-astro.svg"
+          />
           {pins.map((pin) => (
             <button
               key={pin.country}
-              className={styles.pin}
+              className={clsx(styles.pin, {
+                [styles.pinActive]: activePin.country === pin.country
+              })}
+              onFocus={() => setActivePin(pin)}
               onMouseEnter={() => setActivePin(pin)}
-              style={{ left: `${pin.x}%`, top: `${pin.y}%` }}
+              style={getProjectedPosition(pin.latitude, pin.longitude)}
               type="button"
             >
               <span className={styles.pinMarker}>
                 <Icon name="mapPin" size={16} />
               </span>
               <span className={styles.pinPreview}>
-                <span className={styles.pinSwatch} style={{ background: pin.tone }} />
+                <span className={styles.flagBadge}>
+                  <Image
+                    alt={pin.flagAlt}
+                    className={styles.flagImage}
+                    height={40}
+                    src={pin.flag}
+                    width={56}
+                  />
+                </span>
                 <strong>{pin.project}</strong>
                 <span>{pin.country}</span>
               </span>
             </button>
           ))}
           <div className={styles.activeCard}>
-            <div className={styles.activeSwatch} style={{ background: activePin.tone }} />
+            <div className={styles.activeFlag}>
+              <Image
+                alt={activePin.flagAlt}
+                className={styles.activeFlagImage}
+                height={44}
+                src={activePin.flag}
+                width={68}
+              />
+            </div>
             <div>
               <p>Hover Preview</p>
               <h3>{activePin.project}</h3>

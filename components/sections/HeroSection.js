@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import ButtonLink from "@/components/shared/ButtonLink";
 import Reveal from "@/components/shared/Reveal";
-import HeroMachine from "@/components/sections/HeroMachine";
 import styles from "@/components/sections/HeroSection.module.css";
 
 export default function HeroSection({ content }) {
@@ -22,7 +21,6 @@ export default function HeroSection({ content }) {
       <div className={styles.leftSlab} />
       <div className={clsx(styles.dots, styles.dotsA)} />
       <div className={clsx(styles.dots, styles.dotsB)} />
-      <HeroMachine />
       <div className={clsx("container", styles.grid)}>
         <Reveal className={styles.panel}>
           <span className="eyebrow">{content.eyebrow}</span>
