@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import ButtonLink from "@/components/shared/ButtonLink";
 import Reveal from "@/components/shared/Reveal";
+import HeroMachine from "@/components/sections/HeroMachine";
 import styles from "@/components/sections/HeroSection.module.css";
 
 export default function HeroSection({ content }) {
@@ -16,7 +17,12 @@ export default function HeroSection({ content }) {
       >
         <source src="/assets/video/hero-loop.mp4" type="video/mp4" />
       </video>
-      <div className={styles.overlay} />
+      <div className={styles.rightTint} />
+      <div className={styles.leftGlow} />
+      <div className={styles.leftSlab} />
+      <div className={clsx(styles.dots, styles.dotsA)} />
+      <div className={clsx(styles.dots, styles.dotsB)} />
+      <HeroMachine />
       <div className={clsx("container", styles.grid)}>
         <Reveal className={styles.panel}>
           <span className="eyebrow">{content.eyebrow}</span>
@@ -33,16 +39,6 @@ export default function HeroSection({ content }) {
             </ButtonLink>
           </div>
         </Reveal>
-        <div className={styles.details}>
-          <div className={styles.metricCard}>
-            <strong>Export Ready</strong>
-            <span>Industrial minerals prepared for local and global supply chains.</span>
-          </div>
-          <div className={styles.metricCard}>
-            <strong>Precise Processing</strong>
-            <span>Exploration, treatment, upgrading, storage, and quality control in one workflow.</span>
-          </div>
-        </div>
       </div>
     </section>
   );

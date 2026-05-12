@@ -15,6 +15,7 @@ Next.js rebuild of the Astro Mining & Industrial homepage using the supplied pre
 - Reusable layout and shared UI components
 - SEO-ready metadata and semantic structure
 - Real local logo and hero video integration
+- Generated mineral product imagery placed in reusable local assets
 - Company profile PDF wired into the footer download card
 - Scroll-based fade-up animations across sections
 - Refactored `astro_homepage_preview.jsx` into a compatibility export

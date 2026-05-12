@@ -83,6 +83,7 @@ export const products = [
   {
     name: "Silica Sand",
     slug: "silica-sand",
+    image: "/assets/images/products/silica-sand.png",
     capacity: "30,000 tons monthly",
     uses: "Glass, foundries, and filtration applications.",
     specs: ["SiO2 > 99.7%", "Fe2O3 < 0.010-0.015%"],
@@ -91,6 +92,7 @@ export const products = [
   {
     name: "Gypsum",
     slug: "gypsum",
+    image: "/assets/images/products/gypsum.png",
     capacity: "30,000 tons monthly",
     uses: "Construction, cement, and industrial processing.",
     specs: ["SO3 43.50 - 46.00", "Purity up to 97.5%"],
@@ -99,6 +101,7 @@ export const products = [
   {
     name: "Kaolin",
     slug: "kaolin",
+    image: "/assets/images/products/kaolin.png",
     capacity: "5,000 tons monthly",
     uses: "Ceramics, paints, paper, and chemicals.",
     specs: ["Al2O3 ranges 26-38%", "Fe2O3 from 0.2-1.5%"],
@@ -107,6 +110,7 @@ export const products = [
   {
     name: "Dolomite",
     slug: "dolomite",
+    image: "/assets/images/products/dolomite.png",
     capacity: "10,000 tons monthly",
     uses: "Glass, refractories, and metallurgical use.",
     specs: ["MgO 20% min", "CaCO3 32% min"],
@@ -115,6 +119,7 @@ export const products = [
   {
     name: "Iron Oxides",
     slug: "iron-oxides",
+    image: "/assets/images/products/iron-oxides.png",
     capacity: "5,000 tons monthly",
     uses: "Pigments, ceramics, and industrial manufacturing.",
     specs: ["Red hematite 55-65%", "Red hematite 75-80%"],
@@ -123,6 +128,7 @@ export const products = [
   {
     name: "Feldspar",
     slug: "feldspar",
+    image: "/assets/images/products/feldspar.png",
     capacity: "5,000 tons monthly",
     uses: "Ceramics, tiles, and glass manufacturing.",
     specs: ["K2O from 5.5-11%+", "Iron oxides below 1%"],
@@ -131,6 +137,7 @@ export const products = [
   {
     name: "Calcium Carbonate",
     slug: "calcium-carbonate",
+    image: "/assets/images/products/calcium-carbonate.png",
     capacity: "15,000 tons monthly",
     uses: "Paints, plastics, paper, and filler applications.",
     specs: ["CaCO3 > 99%", "Whiteness > 97%"],
@@ -139,6 +146,7 @@ export const products = [
   {
     name: "White Feldspar",
     slug: "white-feldspar",
+    image: "/assets/images/products/white-feldspar.png",
     capacity: "10,000 tons monthly",
     uses: "High-grade ceramic and glass formulations.",
     specs: ["K2O from 8-12%", "Fe2O3 from 0.4-0.8%"],

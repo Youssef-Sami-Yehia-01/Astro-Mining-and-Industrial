@@ -4,40 +4,55 @@
   background: #eef2f7;
 }
 
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 -12%;
+  width: 48%;
+  background: #0f1722;
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 44%;
+  background: #0f1722;
+  transform: skewX(-14deg);
+  transform-origin: top right;
+}
+
 .shell {
+  position: relative;
+  z-index: 1;
   width: min(var(--container), calc(100vw - 2rem));
   margin: 0 auto;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.15fr);
   gap: 0;
   align-items: stretch;
 }
 
 .intro {
   position: relative;
-  padding: 3rem;
+  padding: 3.25rem 3rem;
   color: var(--color-white);
-  background: #0f1722;
+  background: transparent;
 }
 
-.intro::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -7rem;
-  width: 10rem;
-  height: 100%;
-  transform: skewX(-14deg);
-  background: #0f1722;
+.intro :global(.section-title) {
+  max-width: 19rem;
+  font-size: clamp(3.2rem, 4.4vw, 5rem);
+  line-height: 0.95;
 }
 
 .copy {
-  max-width: 34rem;
+  max-width: 22rem;
   color: rgba(255, 255, 255, 0.76);
-  line-height: 1.85;
+  line-height: 1.8;
 }
 
 .cta {
@@ -54,44 +69,18 @@
   text-transform: uppercase;
 }
 
-.highlightList {
-  display: grid;
-  gap: 0.85rem;
-  padding: 0;
-  margin: 1.4rem 0 0;
-  list-style: none;
-}
-
-.highlightList li {
-  position: relative;
-  padding-left: 1.3rem;
-  color: rgba(255, 255, 255, 0.78);
-  line-height: 1.7;
-}
-
-.highlightList li::before {
-  content: "";
-  position: absolute;
-  top: 0.7rem;
-  left: 0;
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 999px;
-  background: var(--color-orange-500);
-}
-
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 2rem;
-  background: #eef2f7;
+  padding: 1.9rem 0;
+  background: transparent;
 }
 
 .statCard {
   display: grid;
   gap: 0.8rem;
   place-items: center;
-  min-height: 16rem;
+  min-height: 15.5rem;
   padding: 1.4rem;
   text-align: center;
   border-left: 1px solid rgba(17, 24, 39, 0.12);
@@ -127,8 +116,11 @@
     grid-template-columns: 1fr;
   }
 
-  .intro::before {
-    display: none;
+  .section::before,
+  .section::after {
+    width: 100%;
+    inset: 0;
+    transform: none;
   }
 
   .statCard {

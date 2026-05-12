@@ -17,6 +17,11 @@
   line-height: 1.8;
 }
 
+.brandBlock :global(.logo) {
+  transform: scale(1.25);
+  transform-origin: left center;
+}
+
 .footer h3 {
   margin: 0 0 1rem;
   font-family: var(--font-heading), sans-serif;
