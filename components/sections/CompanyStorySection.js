@@ -129,10 +129,6 @@ export default function CompanyStorySection({ content }) {
                     />
                   </div>
                 ))}
-                <div className={styles.visualCaption}>
-                  <span>{activeStep.label}</span>
-                  <strong>{activeStep.title}</strong>
-                </div>
               </div>
             </div>
           </div>
