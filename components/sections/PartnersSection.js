@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
+import Icon from "@/components/shared/Icon";
 import styles from "@/components/sections/PartnersSection.module.css";
 
 const AUTO_STEP_DELAY = 4200;
@@ -101,7 +102,7 @@ export default function PartnersSection({ partners }) {
           onClick={movePrevious}
           type="button"
         >
-          &lt;
+          <Icon className={`${styles.arrowIcon} ${styles.arrowIconLeft}`} name="arrowRight" size={18} />
         </button>
         <div
           className={styles.viewport}
@@ -140,7 +141,7 @@ export default function PartnersSection({ partners }) {
           onClick={moveNext}
           type="button"
         >
-          &gt;
+          <Icon className={styles.arrowIcon} name="arrowRight" size={18} />
         </button>
       </div>
     </section>

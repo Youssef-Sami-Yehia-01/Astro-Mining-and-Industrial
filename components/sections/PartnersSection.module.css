@@ -37,9 +37,6 @@
   background: rgba(255, 255, 255, 0.96);
   color: #18212d;
   box-shadow: var(--shadow-card);
-  font-family: var(--font-heading), sans-serif;
-  font-size: 1.15rem;
-  line-height: 1;
   transition:
     transform 180ms ease,
     color 180ms ease,
@@ -52,8 +49,27 @@
   color: #e56d1f;
 }
 
+.arrowIcon {
+  transition:
+    transform 220ms ease,
+    filter 220ms ease;
+}
+
+.arrowIconLeft {
+  transform: rotate(180deg);
+}
+
+.arrowButton:hover .arrowIcon {
+  transform: translateX(3px);
+  filter: drop-shadow(0 0 10px rgba(229, 109, 31, 0.25));
+}
+
+.arrowButton:hover .arrowIconLeft {
+  transform: rotate(180deg) translateX(3px);
+}
+
 .partnerCard {
-  flex: 0 0 calc((100% - 4rem) / 5);
+  flex: 0 0 clamp(12.75rem, 18vw, 16rem);
   min-height: 8rem;
   padding: 1rem 1.15rem;
   border: 1px solid rgba(17, 24, 39, 0.08);
@@ -74,7 +90,7 @@
 
 @media (max-width: 980px) {
   .partnerCard {
-    flex-basis: calc((100% - 2rem) / 3);
+    flex-basis: 14rem;
   }
 }
 
@@ -88,6 +104,6 @@
   }
 
   .partnerCard {
-    flex-basis: calc((100% - 1rem) / 2);
+    flex-basis: 13rem;
   }
 }
