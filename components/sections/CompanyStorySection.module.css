@@ -154,7 +154,7 @@
 
 .visualFrame {
   position: relative;
-  min-height: 46rem;
+  min-height: 42rem;
   height: 100%;
   overflow: hidden;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 13% 100%);
