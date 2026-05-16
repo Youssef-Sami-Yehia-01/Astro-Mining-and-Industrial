@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import ButtonLink from "@/components/shared/ButtonLink";
 import styles from "@/components/sections/CompanyStorySection.module.css";
 
@@ -67,10 +67,10 @@ export default function CompanyStorySection({ content }) {
 
   return (
     <section className={styles.section} id="about">
-      <div className="container">
-        <div className={styles.shell}>
+      <div className={styles.shell}>
         <div className={styles.stickyStage}>
-            <div className={styles.copyColumn}>
+          <div className={styles.copyOuter}>
+            <div className={clsx("container", styles.copyColumn)}>
               <span className="eyebrow">{content.eyebrow}</span>
               <h2 className={clsx("section-title", styles.heading)}>{content.title}</h2>
               <p className="section-copy">{content.copy}</p>
@@ -113,39 +113,39 @@ export default function CompanyStorySection({ content }) {
                 </AnimatePresence>
               </div>
             </div>
-            <div className={styles.visualColumn}>
-              <div className={styles.visualFrame}>
-                {content.steps.map((step, index) => (
-                  <div
-                    className={clsx(styles.visualLayer, index === activeIndex && styles.visualLayerActive)}
-                    key={step.id}
-                  >
-                    <Image
-                      alt={step.image.alt}
-                      className={styles.image}
-                      fill
-                      sizes="(max-width: 980px) 100vw, 42vw"
-                      src={step.image.src}
-                    />
-                  </div>
-                ))}
-              </div>
+          </div>
+          <div className={styles.visualColumn}>
+            <div className={styles.visualFrame}>
+              {content.steps.map((step, index) => (
+                <div
+                  className={clsx(styles.visualLayer, index === activeIndex && styles.visualLayerActive)}
+                  key={step.id}
+                >
+                  <Image
+                    alt={step.image.alt}
+                    className={styles.image}
+                    fill
+                    sizes="(max-width: 980px) 100vw, 50vw"
+                    src={step.image.src}
+                  />
+                </div>
+              ))}
             </div>
           </div>
-          <div className={styles.markers} aria-hidden="true">
-            {content.steps.map((step, index) => (
-              <div
-                className={styles.marker}
-                data-index={index}
-                key={step.id}
-                ref={(node) => {
-                  markerRefs.current[index] = node;
-                }}
-              />
-            ))}
-          </div>
         </div>
-        <div className={styles.mobileStack}>
+        <div className={styles.markers} aria-hidden="true">
+          {content.steps.map((step, index) => (
+            <div
+              className={styles.marker}
+              data-index={index}
+              key={step.id}
+              ref={(node) => {
+                markerRefs.current[index] = node;
+              }}
+            />
+          ))}
+        </div>
+        <div className={clsx("container", styles.mobileStack)}>
           {content.steps.map((step) => (
             <article className={styles.mobileCard} key={step.id}>
               <div className={styles.mobileVisual}>

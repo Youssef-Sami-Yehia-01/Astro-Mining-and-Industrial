@@ -17,9 +17,13 @@
   position: sticky;
   top: 6.5rem;
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 0;
   align-items: stretch;
+}
+
+.copyOuter {
+  display: grid;
 }
 
 .copyColumn {
@@ -147,7 +151,7 @@
 
 .visualFrame {
   position: relative;
-  min-height: 42rem;
+  min-height: 46rem;
   height: 100%;
   overflow: hidden;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 13% 100%);
