@@ -4,9 +4,16 @@
   padding: 0.9rem 0 1.2rem;
 }
 
-.railWrap {
+.controlsRow {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 0.9rem;
+  align-items: center;
   width: min(var(--container), calc(100vw - 1.5rem));
   margin: 0 auto;
+}
+
+.railWrap {
   overflow: hidden;
   mask-image: linear-gradient(90deg, transparent, black 9%, black 91%, transparent);
 }
@@ -18,17 +25,41 @@
   padding: 0.35rem 0 1rem;
   overflow-x: auto;
   scrollbar-width: none;
-  cursor: grab;
-  user-select: none;
-  touch-action: pan-y;
 }
 
 .rail::-webkit-scrollbar {
   display: none;
 }
 
-.dragging {
-  cursor: grabbing;
+.arrowButton {
+  display: inline-flex;
+  width: 3rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #18212d;
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.arrowButton:hover {
+  transform: translateY(-2px);
+  border-color: rgba(229, 109, 31, 0.55);
+  color: #e56d1f;
+}
+
+.arrowLeft {
+  transform: rotate(180deg);
+}
+
+.arrowLeft:hover {
+  transform: rotate(180deg) translateY(2px);
 }
 
 .partnerCard {
@@ -52,12 +83,24 @@
 }
 
 @media (max-width: 980px) {
+  .controlsRow {
+    gap: 0.7rem;
+  }
+
   .partnerCard {
     flex-basis: 16rem;
   }
 }
 
 @media (max-width: 640px) {
+  .controlsRow {
+    grid-template-columns: 1fr;
+  }
+
+  .arrowButton {
+    display: none;
+  }
+
   .partnerCard {
     flex-basis: 15rem;
   }
