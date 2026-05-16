@@ -7,7 +7,7 @@ export default function ContactSection({ contact }) {
   return (
     <section className={styles.section} id="contact">
       <div className={clsx("container", styles.grid)}>
-        <Reveal className={styles.infoCard}>
+        <Reveal className={styles.infoCard} direction="left" distance={38}>
           <span className="eyebrow">Contact Us</span>
           <h2 className="section-title">Let&apos;s discuss your material requirements</h2>
           <p className={styles.copy}>
@@ -24,7 +24,7 @@ export default function ContactSection({ contact }) {
             <p><Icon name="mail" size={18} /> {contact.emails.join(" / ")}</p>
           </div>
         </Reveal>
-        <Reveal className={styles.formCard}>
+        <Reveal className={styles.formCard} direction="up" distance={34}>
           <form className={styles.form}>
             <div className={styles.twoCol}>
               <label>

@@ -1,8 +1,22 @@
 .strip {
+  position: relative;
+  overflow: hidden;
   color: var(--color-white);
   background:
     radial-gradient(circle at top left, rgba(229, 109, 31, 0.18), transparent 20%),
     linear-gradient(180deg, #0f1722 0%, #121d2a 100%);
+}
+
+.strip::after {
+  content: "";
+  position: absolute;
+  right: 2.4rem;
+  bottom: 1.6rem;
+  width: 7rem;
+  height: 7rem;
+  opacity: 0.12;
+  background-image: radial-gradient(#cbd5e1 1.4px, transparent 1.4px);
+  background-size: 12px 12px;
 }
 
 .grid {

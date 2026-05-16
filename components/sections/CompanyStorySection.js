@@ -8,10 +8,10 @@ import ButtonLink from "@/components/shared/ButtonLink";
 import styles from "@/components/sections/CompanyStorySection.module.css";
 
 const contentMotion = {
-  initial: { opacity: 0, y: 24 },
+  initial: { opacity: 0, x: -34 },
   animate: {
     opacity: 1,
-    y: 0,
+    x: 0,
     transition: {
       duration: 0.48,
       ease: [0.22, 1, 0.36, 1]
@@ -19,9 +19,53 @@ const contentMotion = {
   },
   exit: {
     opacity: 0,
-    y: -16,
+    x: -20,
     transition: {
       duration: 0.3,
+      ease: [0.4, 0, 1, 1]
+    }
+  }
+};
+
+const firstImageMotion = {
+  initial: { opacity: 0, x: 42, scale: 1.03 },
+  animate: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: {
+      duration: 0.54,
+      ease: [0.22, 1, 0.36, 1]
+    }
+  },
+  exit: {
+    opacity: 0,
+    x: -18,
+    scale: 1.01,
+    transition: {
+      duration: 0.28,
+      ease: [0.4, 0, 1, 1]
+    }
+  }
+};
+
+const imageMotion = {
+  initial: { opacity: 0, y: 42, scale: 1.03 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.54,
+      ease: [0.22, 1, 0.36, 1]
+    }
+  },
+  exit: {
+    opacity: 0,
+    y: -18,
+    scale: 1.01,
+    transition: {
+      duration: 0.28,
       ease: [0.4, 0, 1, 1]
     }
   }
@@ -114,20 +158,24 @@ export default function CompanyStorySection({ content }) {
           </div>
           <div className={styles.visualColumn}>
             <div className={styles.visualFrame}>
-              {content.steps.map((step, index) => (
-                <div
-                  className={clsx(styles.visualLayer, index === activeIndex && styles.visualLayerActive)}
-                  key={step.id}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  animate="animate"
+                  className={clsx(styles.visualLayer, styles.visualLayerActive)}
+                  exit="exit"
+                  initial="initial"
+                  key={activeStep.id}
+                  variants={activeIndex === 0 ? firstImageMotion : imageMotion}
                 >
                   <Image
-                    alt={step.image.alt}
+                    alt={activeStep.image.alt}
                     className={styles.image}
                     fill
                     sizes="(max-width: 980px) 100vw, 50vw"
-                    src={step.image.src}
+                    src={activeStep.image.src}
                   />
-                </div>
-              ))}
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
         </div>

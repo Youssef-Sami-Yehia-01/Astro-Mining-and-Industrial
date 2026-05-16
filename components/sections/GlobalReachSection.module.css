@@ -1,6 +1,21 @@
 .section {
+  position: relative;
+  overflow: hidden;
   background: var(--color-white);
   padding: 3rem 0 0;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 2.4rem;
+  right: 2rem;
+  width: 7rem;
+  height: 7rem;
+  opacity: 0.16;
+  background-image: radial-gradient(#94a3b8 1.2px, transparent 1.2px);
+  background-size: 12px 12px;
+  pointer-events: none;
 }
 
 .grid {
@@ -15,6 +30,10 @@
 .grid :global(.section-title) {
   max-width: 24rem;
   font-size: clamp(2.8rem, 4.1vw, 5rem);
+}
+
+.mapWrap {
+  display: grid;
 }
 
 .mapCard {

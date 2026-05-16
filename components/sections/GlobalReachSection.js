@@ -4,6 +4,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import { useState } from "react";
 import Icon from "@/components/shared/Icon";
+import Reveal from "@/components/shared/Reveal";
 import styles from "@/components/sections/GlobalReachSection.module.css";
 
 function getProjectedPosition(latitude, longitude) {
@@ -26,7 +27,7 @@ export default function GlobalReachSection({ countries, pins }) {
   return (
     <section className={styles.section}>
       <div className={clsx("container", styles.grid)}>
-        <div>
+        <Reveal direction="left" distance={38}>
           <span className="eyebrow">Our Global Reach</span>
           <h2 className="section-title">Exporting to many countries worldwide</h2>
           <div className={styles.countryGrid}>
@@ -57,7 +58,8 @@ export default function GlobalReachSection({ countries, pins }) {
               );
             })}
           </div>
-        </div>
+        </Reveal>
+        <Reveal className={styles.mapWrap} direction="up" distance={34}>
         <div className={styles.mapCard}>
           <div className={styles.mapTexture} />
           <Image
@@ -114,6 +116,7 @@ export default function GlobalReachSection({ countries, pins }) {
             </div>
           </div>
         </div>
+        </Reveal>
       </div>
     </section>
   );

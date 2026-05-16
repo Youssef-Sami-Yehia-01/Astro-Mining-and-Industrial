@@ -12,7 +12,7 @@ export default function ProductsSection({ products }) {
   return (
     <section className={styles.section} id="products">
       <div className="container">
-        <Reveal className={styles.heading}>
+        <Reveal className={styles.heading} direction="left" distance={36}>
           <span className="eyebrow">Our Products</span>
           <h2 className="section-title">Pure minerals. Powering industries.</h2>
           <p className="section-copy">
@@ -29,6 +29,8 @@ export default function ProductsSection({ products }) {
                 className={clsx(styles.card, {
                   [styles.cardActive]: isActive
                 })}
+                direction="up"
+                distance={34}
               >
                 <article
                   aria-pressed={isActive}
@@ -67,7 +69,9 @@ export default function ProductsSection({ products }) {
           })}
         </div>
         <div className={styles.actions}>
-          <a className={styles.allButton} href="#contact">View All Products</a>
+          <Reveal direction="up" distance={28}>
+            <a className={styles.allButton} href="#contact">View All Products</a>
+          </Reveal>
         </div>
       </div>
     </section>

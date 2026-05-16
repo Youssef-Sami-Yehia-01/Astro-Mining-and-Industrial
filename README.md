@@ -37,6 +37,7 @@ Next.js rebuild of the Astro Mining & Industrial homepage using the supplied pre
 - Feature strip
 - About section with quarry visuals and company story
 - Combined About + Services scroll-story section with synchronized copy and diagonal media transitions
+- Directional reveal animations and expanded dotted accent treatments across major sections
 - Products grid matching the preview layout
 - Industries grid matching the preview layout
 - Why Astro stats section matching the preview layout

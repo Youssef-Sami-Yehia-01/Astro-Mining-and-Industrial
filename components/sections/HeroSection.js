@@ -22,7 +22,7 @@ export default function HeroSection({ content }) {
       <div className={clsx(styles.dots, styles.dotsA)} />
       <div className={clsx(styles.dots, styles.dotsB)} />
       <div className={clsx("container", styles.grid)}>
-        <Reveal className={styles.panel}>
+        <Reveal className={styles.panel} direction="left" distance={54}>
           <span className="eyebrow">{content.eyebrow}</span>
           <h1 className={styles.title}>
             {content.titleTop} <span>{content.titleAccent}</span>

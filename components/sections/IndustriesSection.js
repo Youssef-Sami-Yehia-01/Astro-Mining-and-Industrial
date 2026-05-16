@@ -6,7 +6,7 @@ export default function IndustriesSection({ industries }) {
   return (
     <section className={styles.section} id="industries">
       <div className={styles.wrap}>
-        <Reveal className={styles.frame}>
+        <Reveal className={styles.frame} direction="up" distance={34}>
           <h3 className={styles.title}>Industries We Serve</h3>
           <div className={styles.grid}>
             {industries.map((industry) => (

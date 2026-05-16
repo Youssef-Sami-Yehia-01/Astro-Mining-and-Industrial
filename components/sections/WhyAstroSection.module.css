@@ -4,6 +4,19 @@
   background: #eef2f7;
 }
 
+.section::before {
+  content: "";
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+  width: 7rem;
+  height: 7rem;
+  opacity: 0.14;
+  background-image: radial-gradient(#94a3b8 1.2px, transparent 1.2px);
+  background-size: 12px 12px;
+  pointer-events: none;
+}
+
 .shell {
   position: relative;
   z-index: 1;
