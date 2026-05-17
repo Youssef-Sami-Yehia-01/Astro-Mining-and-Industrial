@@ -63,14 +63,18 @@
   padding: 1.5rem;
   overflow: hidden;
   border-radius: 0.35rem;
-  background: #f1f5f9;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(241, 245, 249, 0.92)),
+    #f1f5f9;
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
 }
 
 .mapTexture {
   position: absolute;
   inset: 0;
-  opacity: 0.6;
-  background-image: radial-gradient(#94a3b8 1px, transparent 1px);
+  opacity: 0.42;
+  background-image: radial-gradient(rgba(148, 163, 184, 0.9) 1px, transparent 1px);
   background-size: 16px 16px;
 }
 
@@ -86,7 +90,8 @@
   height: 100%;
   object-fit: fill;
   object-position: center;
-  opacity: 0.96;
+  opacity: 0.88;
+  filter: saturate(0.75);
 }
 
 .countryGrid {
