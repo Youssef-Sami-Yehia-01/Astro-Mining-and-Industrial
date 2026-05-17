@@ -11,7 +11,8 @@ export default function ProductsSection({ products }) {
 
   return (
     <section className={styles.section} id="products">
-      <div className="container">
+      <div className={styles.blendTop} aria-hidden="true" />
+      <div className={styles.inner}>
         <Reveal className={styles.heading} direction="left" distance={36}>
           <span className="eyebrow">Our Products</span>
           <h2 className="section-title">Pure minerals. Powering industries.</h2>
