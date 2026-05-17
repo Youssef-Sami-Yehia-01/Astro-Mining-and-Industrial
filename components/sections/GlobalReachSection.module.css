@@ -35,7 +35,7 @@
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr);
   gap: 2rem;
   padding-top: 2rem;
-  align-items: start;
+  align-items: stretch;
   position: relative;
   z-index: 1;
 }
@@ -47,11 +47,18 @@
 
 .mapWrap {
   display: grid;
+  grid-template-rows: 3.45rem minmax(0, 1fr);
+  align-self: stretch;
+}
+
+.mapOffset {
+  height: 100%;
 }
 
 .mapCard {
   position: relative;
-  min-height: 22.5rem;
+  min-height: 0;
+  height: 100%;
   padding: 1.5rem;
   overflow: hidden;
   border-radius: 0.35rem;
@@ -264,6 +271,14 @@
 
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .mapWrap {
+    grid-template-rows: 1fr;
+  }
+
+  .mapOffset {
+    display: none;
   }
 
   .mapCard {
