@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import AnimatedStatValue from "@/components/shared/AnimatedStatValue";
 import Icon from "@/components/shared/Icon";
 import Reveal from "@/components/shared/Reveal";
 import styles from "@/components/sections/WhyAstroSection.module.css";
@@ -21,7 +22,7 @@ export default function WhyAstroSection({ stats }) {
               <div className={styles.statIcon}>
                 <Icon name={stat.icon} size={28} />
               </div>
-              <strong>{stat.value}</strong>
+              <AnimatedStatValue value={stat.value} />
               <span>{stat.label}</span>
             </Reveal>
           ))}
