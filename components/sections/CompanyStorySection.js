@@ -13,7 +13,7 @@ const contentMotion = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.48,
+      duration: 0.78,
       ease: [0.22, 1, 0.36, 1]
     }
   },
@@ -21,7 +21,7 @@ const contentMotion = {
     opacity: 0,
     x: -20,
     transition: {
-      duration: 0.3,
+      duration: 0.42,
       ease: [0.4, 0, 1, 1]
     }
   }
@@ -34,7 +34,7 @@ const firstImageMotion = {
     x: 0,
     scale: 1,
     transition: {
-      duration: 0.54,
+      duration: 0.88,
       ease: [0.22, 1, 0.36, 1]
     }
   },
@@ -43,7 +43,7 @@ const firstImageMotion = {
     x: -18,
     scale: 1.01,
     transition: {
-      duration: 0.28,
+      duration: 0.46,
       ease: [0.4, 0, 1, 1]
     }
   }
@@ -56,7 +56,7 @@ const imageMotion = {
     y: 0,
     scale: 1,
     transition: {
-      duration: 0.54,
+      duration: 0.88,
       ease: [0.22, 1, 0.36, 1]
     }
   },
@@ -65,7 +65,7 @@ const imageMotion = {
     y: -18,
     scale: 1.01,
     transition: {
-      duration: 0.28,
+      duration: 0.46,
       ease: [0.4, 0, 1, 1]
     }
   }
