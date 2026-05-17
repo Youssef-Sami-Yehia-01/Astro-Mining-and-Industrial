@@ -1,17 +1,24 @@
-import { Barlow, Bebas_Neue } from "next/font/google";
+import { Cairo, Gantari } from "next/font/google";
 import "@/app/globals.css";
 
-const bodyFont = Barlow({
+const bodyFont = Gantari({
   subsets: ["latin"],
   variable: "--font-body",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap"
 });
 
-const headingFont = Bebas_Neue({
+const headingFont = Gantari({
   subsets: ["latin"],
   variable: "--font-heading",
-  weight: "400",
+  weight: ["500", "600", "700", "800"],
+  display: "swap"
+});
+
+const arabicFont = Cairo({
+  subsets: ["arabic", "latin"],
+  variable: "--font-arabic",
+  weight: ["400", "500", "600", "700"],
   display: "swap"
 });
 
@@ -55,7 +62,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${bodyFont.variable} ${headingFont.variable}`}>
+      <body className={`${bodyFont.variable} ${headingFont.variable} ${arabicFont.variable}`}>
         {children}
       </body>
     </html>
