@@ -140,15 +140,29 @@
 
 @media (max-width: 640px) {
   .controlsRow {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.55rem;
+    width: min(calc(100vw - 1rem), 100%);
   }
 
   .arrowButton {
-    display: none;
+    width: 2.35rem;
+    height: 2.35rem;
+    flex-shrink: 0;
   }
 
   .partnerCard {
-    flex-basis: 13rem;
+    flex-basis: min(72vw, 14rem);
+    min-height: 7rem;
+    padding: 0.85rem 1rem;
+  }
+
+  .logoFrame {
+    height: 4.9rem;
+  }
+
+  .viewport {
+    mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
   }
 
   .sectionBlendBottom {
