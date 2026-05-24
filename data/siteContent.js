@@ -73,6 +73,14 @@ export const aboutContent = {
     {
       src: "/assets/images/company/quarry-loader.png",
       alt: "Loader moving white mineral stone at an Astro quarry"
+    },
+    {
+      src: "/assets/images/company/site-photo-5.jpeg",
+      alt: "Astro Mining industrial site operations"
+    },
+    {
+      src: "/assets/images/company/site-photo-6.jpeg",
+      alt: "Astro Mining site overview"
     }
   ],
   factCards: [
@@ -91,22 +99,26 @@ export const services = [
   {
     title: "Exploration",
     copy: "Comprehensive geological surveys and assessments to identify and evaluate mineral deposits.",
-    icon: "layers"
+    icon: "layers",
+    image: { src: "/assets/images/company/site-photo-1.jpeg", alt: "Astro quarry exploration site" }
   },
   {
     title: "Treatment",
     copy: "State-of-the-art processing techniques to treat and refine minerals, ensuring high purity and quality.",
-    icon: "flask"
+    icon: "flask",
+    image: { src: "/assets/images/company/site-photo-2.jpeg", alt: "Mineral treatment and processing facility" }
   },
   {
     title: "Upgrading",
     copy: "Advanced methods to enhance the value of raw materials and make them suitable for various industrial applications.",
-    icon: "growth"
+    icon: "growth",
+    image: { src: "/assets/images/company/site-photo-3.jpeg", alt: "Mineral upgrading operations" }
   },
   {
     title: "Supply Raw Materials",
     copy: "Providing high-quality raw materials from mines and quarries while ensuring products stand out through their exceptional quality.",
-    icon: "gem"
+    icon: "gem",
+    image: { src: "/assets/images/company/site-photo-4.jpeg", alt: "Raw mineral supply and dispatch" }
   }
 ];
 
@@ -181,7 +193,7 @@ export const companyStoryContent = {
       ],
       chips: ["Exploration", "Geological Survey", "Treatment", "Quality"],
       image: {
-        src: "/assets/images/company/quarry-excavator.jpeg",
+        src: "/assets/images/company/site-photo-5.jpeg",
         alt: "Astro exploration work at a quarry site"
       }
     },
@@ -199,8 +211,8 @@ export const companyStoryContent = {
       ],
       chips: ["Upgrading", "Raw Material Supply", "Export Ready"],
       image: {
-        src: "/assets/images/company/partnership-handshake.jpeg",
-        alt: "Astro partnership and industrial supply handshake"
+        src: "/assets/images/company/site-photo-6.jpeg",
+        alt: "Astro mineral supply and dispatch operations"
       }
     }
   ]
@@ -278,6 +290,24 @@ export const products = [
     uses: "High-grade ceramic and glass formulations.",
     specs: ["K2O from 8-12%", "Fe2O3 from 0.4-0.8%"],
     tone: "cream"
+  },
+  {
+    name: "Limestone",
+    slug: "limestone",
+    image: "/assets/images/products/limestone.png",
+    capacity: "20,000 tons monthly",
+    uses: "Construction, cement, and chemical industries.",
+    specs: ["CaCO3 > 95%", "Low impurity content"],
+    tone: "stone"
+  },
+  {
+    name: "Talc",
+    slug: "talc",
+    image: "/assets/images/products/talc.png",
+    capacity: "3,000 tons monthly",
+    uses: "Plastics, paints, paper, ceramics, and cosmetics.",
+    specs: ["Whiteness > 92%", "MgO > 30%"],
+    tone: "chalk"
   }
 ];
 
@@ -350,6 +380,31 @@ export const partners = [
     name: "Mega Glass",
     logo: "/assets/images/partners/mega-glass.png",
     alt: "Mega Glass logo"
+  },
+  {
+    name: "Cedar",
+    logo: "/assets/images/partners/cedar.jpeg",
+    alt: "Cedar logo"
+  },
+  {
+    name: "Saint-Gobain",
+    logo: "/assets/images/partners/saint-gobain.jpeg",
+    alt: "Saint-Gobain logo"
+  },
+  {
+    name: "Beam",
+    logo: "/assets/images/partners/beam.jpeg",
+    alt: "Beam logo"
+  },
+  {
+    name: "Sisecam",
+    logo: "/assets/images/partners/sisecam.jpeg",
+    alt: "Sisecam logo"
+  },
+  {
+    name: "Galaxy",
+    logo: "/assets/images/partners/galaxy.png",
+    alt: "Galaxy logo"
   }
 ];
 
@@ -440,12 +495,7 @@ export const mapPins = [
   }
 ];
 
-export const textOnlyPartners = [
-  { name: "Cidar" },
-  { name: "Beam" },
-  { name: "Siscam" },
-  { name: "Saint-Gobain" }
-];
+export const textOnlyPartners = [];
 
 export const contactDetails = {
   address: "71 Abdel Hamid Badawi, Sheraton, Heliopolis, Cairo, Egypt",

@@ -27,10 +27,13 @@ export default function SiteHeader({ navigation }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const isHome = pathname === "/";
+  const logoVariant = isHome && !scrolled ? "default" : "footer";
+
   return (
     <header className={clsx(styles.header, { [styles.scrolled]: scrolled })}>
       <div className={clsx("container", styles.inner)}>
-        <Logo size="large" />
+        <Logo key={logoVariant} size="large" variant={logoVariant} />
         <nav className={styles.desktopNav} aria-label="Primary navigation">
           {navigation.map((item) => (
             <Link

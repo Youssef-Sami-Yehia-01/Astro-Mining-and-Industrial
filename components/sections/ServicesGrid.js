@@ -1,3 +1,4 @@
+import Image from "next/image";
 import clsx from "clsx";
 import Icon from "@/components/shared/Icon";
 import Reveal from "@/components/shared/Reveal";
@@ -20,12 +21,26 @@ export default function ServicesGrid({ services }) {
           {services.map((service, i) => (
             <Reveal key={service.title} direction="up" distance={30} delay={i * 0.09}>
               <div className={clsx("surface-card", styles.card)}>
-                <div className={styles.iconWrap}>
-                  <Icon name={service.icon} size={30} />
+                {service.image && (
+                  <div className={styles.cardImage}>
+                    <Image
+                      alt={service.image.alt}
+                      className={styles.cardImg}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      src={service.image.src}
+                    />
+                    <div className={styles.cardImageOverlay} aria-hidden="true" />
+                  </div>
+                )}
+                <div className={styles.cardBody}>
+                  <div className={styles.iconWrap}>
+                    <Icon name={service.icon} size={30} />
+                  </div>
+                  <div className={styles.num}>{String(i + 1).padStart(2, "0")}</div>
+                  <h3 className={styles.cardTitle}>{service.title}</h3>
+                  <p className={styles.cardCopy}>{service.copy}</p>
                 </div>
-                <div className={styles.num}>{String(i + 1).padStart(2, "0")}</div>
-                <h3 className={styles.cardTitle}>{service.title}</h3>
-                <p className={styles.cardCopy}>{service.copy}</p>
               </div>
             </Reveal>
           ))}
