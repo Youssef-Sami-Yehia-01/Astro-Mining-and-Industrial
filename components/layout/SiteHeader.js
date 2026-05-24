@@ -29,7 +29,7 @@ export default function SiteHeader({ navigation }) {
 
   const isHome = pathname === "/";
   const homeAtTop = isHome && !scrolled;
-  const logoVariant = homeAtTop ? "default" : "footer";
+  const logoVariant = (homeAtTop || isOpen) ? "default" : "footer";
 
   return (
     <header className={clsx(styles.header, { [styles.scrolled]: scrolled, [styles.homeAtTop]: homeAtTop })}>
@@ -57,7 +57,7 @@ export default function SiteHeader({ navigation }) {
           <button
             aria-expanded={isOpen}
             aria-label={isOpen ? "Close menu" : "Open menu"}
-            className={styles.menuButton}
+            className={clsx(styles.menuButton, { [styles.menuButtonOpen]: isOpen })}
             onClick={() => setIsOpen((current) => !current)}
             type="button"
           >
