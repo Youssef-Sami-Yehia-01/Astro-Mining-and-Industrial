@@ -28,6 +28,7 @@
 
 .cardImg {
   object-fit: cover;
+  object-position: center 25%;
   transition: transform 0.45s ease;
 }
 

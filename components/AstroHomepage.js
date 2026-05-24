@@ -14,7 +14,7 @@ export default function AstroHomepage() {
       <HeroSection content={heroContent} />
       <FeatureStrip items={features} />
       <CompanyStorySection content={companyStoryContent} />
-      <ProductsSection products={products} />
+      <ProductsSection products={products} compact />
       <IndustriesSection industries={previewIndustries} />
       <WhyAstroSection highlights={qualityHighlights} stats={stats} />
       <PartnersSection partners={partners} />

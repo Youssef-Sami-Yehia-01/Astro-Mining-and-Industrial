@@ -7,7 +7,7 @@ import Icon from "@/components/shared/Icon";
 import Reveal from "@/components/shared/Reveal";
 import styles from "@/components/sections/ProductsSection.module.css";
 
-export default function ProductsSection({ products }) {
+export default function ProductsSection({ products, compact = false }) {
   const [activeSlug, setActiveSlug] = useState(products[0]?.slug);
   const [modalProduct, setModalProduct] = useState(null);
 
@@ -28,7 +28,7 @@ export default function ProductsSection({ products }) {
   return (
     <section className={styles.section} id="products">
       <div className={styles.blendTop} aria-hidden="true" />
-      <div className={styles.inner}>
+      <div className={clsx(styles.inner, { [styles.compact]: compact })}>
         <Reveal className={styles.heading} direction="left" distance={36}>
           <span className="eyebrow">Our Products</span>
           <h2 className="section-title">Pure minerals. Powering industries.</h2>
@@ -53,7 +53,7 @@ export default function ProductsSection({ products }) {
                   aria-pressed={isActive}
                   aria-label={product.name}
                   className={styles.cardShell}
-                  onClick={() => setActiveSlug(product.slug)}
+                  onClick={() => { setActiveSlug(product.slug); setModalProduct(product); }}
                   onFocus={() => setActiveSlug(product.slug)}
                   onMouseEnter={() => setActiveSlug(product.slug)}
                   onKeyDown={(event) => {
@@ -73,7 +73,6 @@ export default function ProductsSection({ products }) {
                       sizes="(max-width: 640px) 50vw, (max-width: 1080px) 33vw, 20vw"
                       src={product.image}
                     />
-                    <div className={styles.imageGlow} />
                     <span className={styles.visualLabel}>{product.name}</span>
                   </div>
                   <div className={styles.body}>
@@ -127,7 +126,7 @@ export default function ProductsSection({ products }) {
               <p className={styles.modalUses}>{modalProduct.uses}</p>
               <div className={styles.modalMeta}>
                 <div className={styles.modalMetaItem}>
-                  <span>Monthly Capacity</span>
+                  <span>Capacity</span>
                   <strong>{modalProduct.capacity}</strong>
                 </div>
               </div>

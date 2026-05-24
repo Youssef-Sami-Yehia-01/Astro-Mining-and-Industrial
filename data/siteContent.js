@@ -303,14 +303,54 @@ export const products = [
 ];
 
 export const previewIndustries = [
-  { name: "Glass & Ceramics", icon: "flask" },
-  { name: "Construction & Concrete", icon: "building" },
-  { name: "Paints & Coatings", icon: "brush" },
-  { name: "Plastics & Rubber", icon: "flask" },
-  { name: "Oil & Gas", icon: "flask" },
-  { name: "Agriculture", icon: "sprout" },
-  { name: "Chemicals", icon: "flask" },
-  { name: "Paper & Packaging", icon: "file" }
+  {
+    name: "Glass & Ceramics",
+    icon: "flask",
+    description: "High-purity silica sand, feldspar, and dolomite are the backbone of flat glass, container glass, and ceramic tile production — Astro supplies each to specification.",
+    minerals: ["Silica Sand", "Feldspar", "Dolomite", "Kaolin"]
+  },
+  {
+    name: "Construction & Concrete",
+    icon: "building",
+    description: "Gypsum, limestone, and calcium carbonate are essential inputs for cement, plaster, concrete mixes, and a wide range of structural building materials.",
+    minerals: ["Gypsum", "Limestone", "Calcium Carbonate"]
+  },
+  {
+    name: "Paints & Coatings",
+    icon: "brush",
+    description: "Calcium carbonate, kaolin, and talc serve as extenders and functional fillers that improve coverage, opacity, and durability in both water-based and solvent-based coatings.",
+    minerals: ["Calcium Carbonate", "Kaolin", "Talc"]
+  },
+  {
+    name: "Plastics & Rubber",
+    icon: "flask",
+    description: "Ultra-fine calcium carbonate and talc act as cost-effective reinforcing fillers that improve stiffness, surface finish, and dimensional stability in plastic compounds.",
+    minerals: ["Calcium Carbonate", "Talc"]
+  },
+  {
+    name: "Oil & Gas",
+    icon: "flask",
+    description: "Calcium carbonate and limestone are used in drilling fluid formulations and wellbore treatment, supporting safe and efficient extraction operations.",
+    minerals: ["Calcium Carbonate", "Limestone"]
+  },
+  {
+    name: "Agriculture",
+    icon: "sprout",
+    description: "Agricultural gypsum and ground limestone are applied to correct soil acidity, improve soil structure, and replenish essential calcium and sulphur nutrients.",
+    minerals: ["Limestone", "Gypsum"]
+  },
+  {
+    name: "Chemicals",
+    icon: "flask",
+    description: "Precipitated calcium carbonate, kaolin, and iron oxides are critical raw inputs for chemical synthesis, pigment production, and industrial processing.",
+    minerals: ["Calcium Carbonate", "Kaolin", "Iron Oxides"]
+  },
+  {
+    name: "Paper & Packaging",
+    icon: "file",
+    description: "Finely ground calcium carbonate and kaolin are used as coating pigments and filler agents to improve brightness, smoothness, and printability of paper and board.",
+    minerals: ["Calcium Carbonate", "Kaolin"]
+  }
 ];
 
 export const industries = [

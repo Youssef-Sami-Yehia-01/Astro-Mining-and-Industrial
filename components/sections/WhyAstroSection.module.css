@@ -152,6 +152,10 @@
 }
 
 @media (max-width: 900px) {
+  .section {
+    padding-bottom: 3rem;
+  }
+
   .grid,
   .stats {
     grid-template-columns: 1fr;

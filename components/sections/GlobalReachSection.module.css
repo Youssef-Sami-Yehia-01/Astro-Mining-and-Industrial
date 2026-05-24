@@ -298,6 +298,10 @@
 }
 
 @media (max-width: 640px) {
+  .section {
+    padding-bottom: 3rem;
+  }
+
   .countryGrid {
     grid-template-columns: 1fr;
   }

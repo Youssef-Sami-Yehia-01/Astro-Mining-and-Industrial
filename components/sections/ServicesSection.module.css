@@ -106,6 +106,12 @@
   }
 }
 
+@media (max-width: 640px) {
+  .section {
+    padding: 3.5rem 0 4rem;
+  }
+}
+
 @keyframes driftService {
   from {
     transform: scale(1.05) translate3d(0, 0, 0);
