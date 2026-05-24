@@ -23,10 +23,10 @@ export default function Logo({ inverted = false, size = "default", variant = "de
       <div className={styles.mark}>
         <Image
           alt="Astro Mining & Industrial logo"
-          height={isLarge ? cfg.height : cfg.smHeight}
+          fill
           priority
+          sizes={isLarge ? "128px" : "90px"}
           src={cfg.src}
-          width={isLarge ? cfg.width : cfg.smWidth}
         />
       </div>
     </Link>

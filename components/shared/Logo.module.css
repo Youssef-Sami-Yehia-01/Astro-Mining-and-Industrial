@@ -4,9 +4,7 @@
 }
 
 .mark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   width: 5.4rem;
   height: 5.4rem;
   animation: logoFadeIn 0.35s ease;
@@ -15,6 +13,10 @@
 .large .mark {
   width: 8rem;
   height: 8rem;
+}
+
+.mark img {
+  object-fit: contain;
 }
 
 @keyframes logoFadeIn {
