@@ -16,7 +16,7 @@ export default function PartnersSection({ partners }) {
           {partners.map((partner, index) => {
             const isSmall = partner.name === "Kandil Glass" || partner.name === "Pasabahce";
             const isLarge = partner.name === "Duravit" || partner.name === "Sphinx Glass" || partner.name === "Beam";
-            const frameClass = isSmall ? null : isLarge ? styles.logoFrameLarge : styles.logoFrameMedium;
+            const imageClass = isSmall ? null : isLarge ? styles.logoLarge : styles.logoMedium;
             return (
               <Reveal
                 className={styles.clientCard}
@@ -26,10 +26,10 @@ export default function PartnersSection({ partners }) {
                 key={partner.name}
               >
                 <article className={styles.cardInner} role="listitem">
-                  <div className={clsx(styles.logoFrame, frameClass)}>
+                  <div className={styles.logoFrame}>
                     <Image
                       alt={partner.alt}
-                      className={styles.logo}
+                      className={clsx(styles.logo, imageClass)}
                       fill
                       sizes="(max-width: 640px) 42vw, (max-width: 980px) 24vw, 14vw"
                       src={partner.logo}

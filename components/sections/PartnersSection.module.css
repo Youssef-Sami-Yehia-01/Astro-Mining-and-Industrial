@@ -79,22 +79,25 @@
 
 .logoFrame {
   position: relative;
+  overflow: hidden;
   width: 100%;
-  height: 3.2rem;
+  height: 3.5rem;
   filter: saturate(0.94);
 }
 
 .logo {
-  object-fit: cover;
+  object-fit: contain;
   mix-blend-mode: multiply;
 }
 
-.logoFrameMedium {
-  height: 3.5rem;
+.logoMedium {
+  transform: scale(1.35);
+  transform-origin: center;
 }
 
-.logoFrameLarge {
-  height: 5rem;
+.logoLarge {
+  transform: scale(1.75);
+  transform-origin: center;
 }
 
 @media (min-width: 760px) {
@@ -114,15 +117,7 @@
   }
 
   .logoFrame {
-    height: 2.85rem;
-  }
-
-  .logoFrameMedium {
-    height: 3.2rem;
-  }
-
-  .logoFrameLarge {
-    height: 4.5rem;
+    height: 3rem;
   }
 }
 
@@ -159,14 +154,6 @@
   }
 
   .logoFrame {
-    height: 2.4rem;
-  }
-
-  .logoFrameMedium {
     height: 2.75rem;
-  }
-
-  .logoFrameLarge {
-    height: 3.5rem;
   }
 }
