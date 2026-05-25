@@ -85,13 +85,12 @@
 }
 
 .logo {
-  object-fit: contain;
+  object-fit: cover;
   mix-blend-mode: multiply;
 }
 
-.logoSphinx {
-  transform: scale(2);
-  transform-origin: center;
+.logoFrameLarge {
+  height: 5rem;
 }
 
 @media (min-width: 760px) {
@@ -112,6 +111,10 @@
 
   .logoFrame {
     height: 3rem;
+  }
+
+  .logoFrameLarge {
+    height: 4.5rem;
   }
 }
 
@@ -149,5 +152,9 @@
 
   .logoFrame {
     height: 2.65rem;
+  }
+
+  .logoFrameLarge {
+    height: 3.5rem;
   }
 }
