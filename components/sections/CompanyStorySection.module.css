@@ -86,7 +86,7 @@
   display: grid;
   min-height: 100vh;
   align-items: start;
-  padding-top: 8rem;
+  padding-top: 11rem;
   padding-left: max(0.75rem, calc((100vw - var(--container)) / 2));
   padding-right: 2rem;
   padding-bottom: 2rem;
