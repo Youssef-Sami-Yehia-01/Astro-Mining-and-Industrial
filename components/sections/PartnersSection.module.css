@@ -79,7 +79,6 @@
 
 .logoFrame {
   position: relative;
-  overflow: hidden;
   width: 100%;
   height: 3.5rem;
   filter: saturate(0.94);
