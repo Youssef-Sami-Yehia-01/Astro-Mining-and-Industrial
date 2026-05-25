@@ -85,14 +85,16 @@
   position: relative;
   display: grid;
   min-height: 100vh;
-  align-items: center;
+  align-items: start;
+  padding-top: 8rem;
   padding-left: max(0.75rem, calc((100vw - var(--container)) / 2));
   padding-right: 2rem;
+  padding-bottom: 2rem;
 }
 
 .copyColumn {
   display: grid;
-  align-content: center;
+  align-content: start;
   width: min(100%, 38rem);
   padding: 1rem 0;
 }
