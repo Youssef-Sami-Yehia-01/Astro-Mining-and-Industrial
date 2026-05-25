@@ -88,15 +88,6 @@
 .logo {
   object-fit: contain;
   mix-blend-mode: multiply;
-}
-
-.logoMedium {
-  transform: scale(1.35);
-  transform-origin: center;
-}
-
-.logoLarge {
-  transform: scale(1.75);
   transform-origin: center;
 }
 

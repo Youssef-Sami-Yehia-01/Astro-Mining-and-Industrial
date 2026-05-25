@@ -14,9 +14,18 @@ export default function PartnersSection({ partners }) {
         </Reveal>
         <div className={styles.grid} role="list" aria-label="Key clients">
           {partners.map((partner, index) => {
-            const isSmall = partner.name === "Kandil Glass" || partner.name === "Pasabahce";
-            const isLarge = partner.name === "Duravit" || partner.name === "Sphinx Glass" || partner.name === "Beam";
-            const imageClass = isSmall ? null : isLarge ? styles.logoLarge : styles.logoMedium;
+            const scaleMap = {
+              "Sphinx Glass": 1.92,
+              "Duravit":      1.75,
+              "Beam":         1.75,
+              "Galaxy":       1.55,
+              "Saint-Gobain": 1.35,
+              "Crystal Glass":1.2,
+              "Mega Glass":   1.2,
+              "Cedar":        1.2,
+              "Sisecam":      1.2,
+            };
+            const scale = scaleMap[partner.name] ?? 1;
             return (
               <Reveal
                 className={styles.clientCard}
@@ -29,10 +38,11 @@ export default function PartnersSection({ partners }) {
                   <div className={styles.logoFrame}>
                     <Image
                       alt={partner.alt}
-                      className={clsx(styles.logo, imageClass)}
+                      className={styles.logo}
                       fill
                       sizes="(max-width: 640px) 42vw, (max-width: 980px) 24vw, 14vw"
                       src={partner.logo}
+                      style={{ transform: `scale(${scale})` }}
                     />
                   </div>
                 </article>
