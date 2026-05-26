@@ -122,18 +122,18 @@ video {
   }
 }
 
-/* ── Arabic / RTL overrides ────────────────────────────────────── */
-[dir="rtl"] body {
+/* ── Arabic text overrides (layout stays LTR) ───────────────────── */
+.lang-ar body {
   font-family: var(--font-arabic), sans-serif;
 }
 
-[dir="rtl"] .eyebrow {
+.lang-ar .eyebrow {
   font-family: var(--font-arabic), sans-serif;
   letter-spacing: 0.04em;
   text-transform: none;
 }
 
-[dir="rtl"] .section-title {
+.lang-ar .section-title {
   font-family: var(--font-arabic), sans-serif;
   font-size: clamp(2.1rem, 3.4vw, 3.6rem);
   font-weight: 800;
@@ -142,16 +142,16 @@ video {
   line-height: 1.25;
 }
 
-[dir="rtl"] h1,
-[dir="rtl"] h2,
-[dir="rtl"] h3 {
+.lang-ar h1,
+.lang-ar h2,
+.lang-ar h3 {
   font-family: var(--font-arabic), sans-serif;
   font-weight: 800;
   letter-spacing: 0;
   line-height: 1.3;
 }
 
-[dir="rtl"] .section-copy {
+.lang-ar .section-copy {
   font-family: var(--font-arabic), sans-serif;
   font-size: 1.05rem;
   line-height: 1.9;
