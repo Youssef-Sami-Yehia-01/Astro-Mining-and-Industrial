@@ -52,7 +52,7 @@ export default function PartnersGrid({ partners, textPartners }) {
               delay={i * 0.05}
             >
               {partner.isLogo ? (
-                <div className={clsx("surface-card", styles.logoCard)}>
+                <div className={clsx("surface-card", styles.logoCard)} data-partner={partner.name.toLowerCase().replace(/\s+/g, "-")}>
                   <div className={styles.logoFrame}>
                     <Image
                       alt={partner.alt || partner.name}

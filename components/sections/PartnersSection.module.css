@@ -113,6 +113,11 @@
 }
 
 @media (max-width: 640px) {
+  [data-partner="duravit"] .logo,
+  [data-partner="beam"] .logo {
+    transform: scale(1.31) !important;
+  }
+
   .section {
     padding-bottom: 1.4rem;
   }

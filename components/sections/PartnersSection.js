@@ -41,7 +41,7 @@ export default function PartnersSection({ partners }) {
                 distance={26}
                 key={partner.name}
               >
-                <article className={styles.cardInner} role="listitem">
+                <article className={styles.cardInner} role="listitem" data-partner={partner.name.toLowerCase().replace(/\s+/g, "-")}>
                   <div className={styles.logoFrame}>
                     <Image
                       alt={partner.alt}
